@@ -32,8 +32,8 @@ export function calculateWeeklySummary(
   const weeklySummary: WeeklySummary[] = [];
 
   for (const week in weeklyTotals) {
-    const spent = weeklyTotals[Number(week)];
-    const difference = Math.abs(weeklyLimit - spent);
+    const spent = parseFloat(weeklyTotals[Number(week)].toFixed(2));
+    const difference = parseFloat(Math.abs(weeklyLimit - spent).toFixed(2));
 
     let status: "UNDER" | "OVER" | "EXACT";
 
@@ -70,7 +70,8 @@ export function calculateMonthlySummary(
     totalExpenses += transaction.amount;
   }
 
-  const savings = monthlyIncome - totalExpenses;
+  totalExpenses = parseFloat(totalExpenses.toFixed(2));
+  const savings = parseFloat((monthlyIncome - totalExpenses).toFixed(2));
 
   const weeklySummaries = calculateWeeklySummary(
     transactions,
