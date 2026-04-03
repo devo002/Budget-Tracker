@@ -2,23 +2,43 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Output
+Below is an example chat
+![Architecture](sample.png)
+
+## 1 Clone the repository
+```bash
+git clone https://github.com/devo002/Budget-Tracker.git
+cd Budget-Tracker
+```
+
+### 2 Install dependencies
+```bash
+npm install
+```
+
+### 3 Set env vars 
+Create a NEON account and get the environment variable. You can set this in the .env by DATABASE_URL=""
+
+### 4 Run the development Server
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+
+Start the Backend and set Budget and weekly spend
+```bash
+npx prisma generate
+npx prisma studio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Making Changes
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 

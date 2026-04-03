@@ -133,6 +133,12 @@ export default function HomePage() {
           View All Transactions
         </Link>
 
+        <Link
+          href="/dashboard"
+          className="inline-block px-4 py-2 bg-white text-black rounded mb-6 mr-4">
+          View Dashboard
+        </Link>
+
       <TransactionForm
         amount={amount}
         date={date}
